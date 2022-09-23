@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 import Layout from "../components/Layout";
 import Link from "next/link";
 import ActionAreaCard from "../components/ActionAreaCard";
+import utilsStyle from "../styles/utils.module.css";
 
 export const siteTitle = "えれめんの小部屋";
 
@@ -10,7 +11,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <Image src="/profile.jpeg" alt="profile image" width={120} height={120} />
+        <Image src="/profile.jpeg" alt="profile image" width={120} height={120} className={utilsStyle.borderCirle} />
         <h1 className={styles.title}>
           {siteTitle}
         </h1>
