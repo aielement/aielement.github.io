@@ -1,6 +1,7 @@
 import Head from "next/head";
 import {siteTitle} from "../pages";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
 export default function Layout({children}){
     return (
@@ -14,7 +15,7 @@ export default function Layout({children}){
             <div className="main_element">{children}</div>
 
             <footer className={styles.footer}>
-                えれめんの小部屋
+                <Link href="/"><a>えれめんの小部屋</a></Link>
             </footer>
         </div>
     );

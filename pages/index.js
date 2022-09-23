@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Layout from "../components/Layout";
+import Link from "next/link";
+import ActionAreaCard from "../components/ActionAreaCard";
 
 export const siteTitle = "えれめんの小部屋";
 
@@ -14,34 +16,12 @@ export default function Home() {
         </h1>
 
         <div className={styles.grid}>
-          <a href="./profile" className={styles.card}>
-            <h2>自己紹介 &rarr;</h2>
-            <p>簡単な経歴紹介/関連サイトのリンクをまとめています</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>ゲーム制作 &rarr;</h2>
-            <p>制作した/制作中のゲームについてまとめています</p>
-          </a>
-
-          <a
-              href="https://github.com/vercel/next.js/tree/canary/examples"
-              className={styles.card}
-          >
-            <h2>ブログ &rarr;</h2>
-            <p>触った技術を中心にまとめています</p>
-          </a>
-
-          <a
-              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              className={styles.card}
-          >
-            <h2>TODOまとめ &rarr;</h2>
-            <p>
-              個人的TODOをまとめています
-            </p>
-          </a>
+          <ActionAreaCard route="/profile" title="自己紹介" content="簡単な経歴紹介/関連サイトのリンクをまとめています"/>
+          <ActionAreaCard route="/product" title="ゲーム制作" content="制作した/制作中のゲームについてまとめています"/>
+          <ActionAreaCard route="/blog" title="ブログ" content="触った技術を中心にまとめています"/>
+          <ActionAreaCard route="/todo" title="TODOまとめ" content="個人的TODOをまとめています"/>
         </div>
+
       </main>
     </div>
   )
