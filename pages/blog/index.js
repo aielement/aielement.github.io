@@ -22,7 +22,7 @@ export default function Blog( {allNotePostData} ){
             <main className={generalStyle}>
                 {
                     allNotePostData.map( ({ name, noteUrl, publishAt }) => (
-                        <ActionAreaCard route={noteUrl} title={name} content={publishAt}/>
+                        <ActionAreaCard key={name} route={noteUrl} title={name} content={publishAt}/>
                     ))
                 }
             </main>
