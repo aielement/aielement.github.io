@@ -9,7 +9,7 @@ import Link from "next/link";
 export default function ActionAreaCard({route, image, title, content}) {
     return (
         <Link href={route}>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 345, minWidth:345 }}>
                 <CardActionArea>
                     <CardMedia
                         component="img"

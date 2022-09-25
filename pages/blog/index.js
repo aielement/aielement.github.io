@@ -33,6 +33,7 @@ export default function Blog( {allPostData} ){
     return (
         <Layout>
             <main className={generalStyle.main}>
+                <div className={generalStyle.grid}>
                 {
                     allPostData.map( ({ title, url, publishAt, site }) => {
                         const date = new Date(publishAt);
@@ -54,6 +55,7 @@ export default function Blog( {allPostData} ){
                         }
                     })
                 }
+                </div>
             </main>
         </Layout>
     )
