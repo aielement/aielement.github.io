@@ -32,7 +32,7 @@ export async function getStaticProps() {
 export default function Blog( {allPostData} ){
     return (
         <Layout>
-            <main className={generalStyle}>
+            <main className={generalStyle.main}>
                 {
                     allPostData.map( ({ title, url, publishAt, site }) => {
                         const date = new Date(publishAt);
