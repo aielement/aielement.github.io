@@ -35,7 +35,8 @@ const rows = [
     createData("2021年9月", "第四級アマチュア無線技師　取得"),
     createData("2021年12月", "第一級陸上特殊無線技師　取得"),
     createData("2022年4月", "第二級アマチュア無線技師　取得"),
-    createData("2022年8月", "第一級アマチュア無線技師試験　合格")
+    createData("2023年1月", "第一級アマチュア無線技師試験　取得"),
+    createData("2023年2月", "第一級陸上無線技術士　合格")
 ];
 
 export default function LicenseTable() {
