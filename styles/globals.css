@@ -1,18 +1,58 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply p-0 m-0 font-sans leading-relaxed min-h-screen;
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 50%, #90CAF9 100%);
+    position: relative;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  * {
+    @apply box-border;
+  }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@layer components {
+  .glass-card {
+    @apply bg-white/40 border border-white/50 rounded-2xl shadow-lg transition-transform duration-200;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
 
-* {
-  box-sizing: border-box;
+  .glass-card:hover {
+    @apply bg-white/50 -translate-y-1;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .matcha-gradient-text {
+    @apply text-blue-700 font-bold;
+  }
+
+  .floating-button {
+    @apply fixed top-5 right-5 z-50 bg-white/40 border border-white/50 rounded-2xl p-3 transition-transform duration-200;
+  }
+
+  .floating-button:hover {
+    @apply bg-white/50 -translate-y-1;
+  }
+
+  .readable-text {
+    @apply text-gray-800 font-medium;
+  }
+
+  .readable-text-secondary {
+    @apply text-gray-700 font-normal;
+  }
+
+  .text-backdrop {
+    @apply bg-white/30 p-2 rounded-lg;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +60,84 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    @apply text-gray-100;
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #334155 100%);
   }
+  
+  .glass-card {
+    @apply bg-slate-800/50 border border-slate-600/50;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .glass-card:hover {
+    @apply bg-slate-700/60;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  }
+
+  .matcha-gradient-text {
+    @apply text-emerald-400;
+  }
+
+  .floating-button {
+    @apply bg-slate-800/50 border border-slate-600/50;
+  }
+
+  .floating-button:hover {
+    @apply bg-slate-700/60;
+  }
+
+  .readable-text {
+    @apply text-gray-100;
+  }
+
+  .readable-text-secondary {
+    @apply text-gray-300;
+  }
+
+  .text-backdrop {
+    @apply bg-slate-900/40;
+  }
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  @apply text-gray-100;
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #334155 100%);
+}
+
+.dark .glass-card {
+  @apply bg-slate-800/50 border border-slate-600/50;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.dark .glass-card:hover {
+  @apply bg-slate-700/60;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.dark .matcha-gradient-text {
+  @apply text-emerald-400;
+}
+
+.dark .floating-button {
+  @apply bg-slate-800/50 border border-slate-600/50;
+}
+
+.dark .floating-button:hover {
+  @apply bg-slate-700/60;
+}
+
+.dark .readable-text {
+  @apply text-gray-100;
+}
+
+.dark .readable-text-secondary {
+  @apply text-gray-300;
+}
+
+.dark .text-backdrop {
+  @apply bg-slate-900/40;
 }

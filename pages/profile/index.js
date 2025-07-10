@@ -1,22 +1,30 @@
 import Layout from "../../components/Layout";
 import LicenseTable from "../../components/LicenseTable"
-import generalStyle from "../../styles/GeneralContent.module.css"
 import CareerTable from "../../components/CareerTable";
 
 export default function Profile(){
     return(
         <div>
             <Layout>
-                <main className={generalStyle.main}>
-                    <h1>自己紹介</h1>
-                    <h2>経歴</h2>
-                    <CareerTable/>
+                <main className="min-h-screen py-16 flex flex-col items-center glass-card mx-8 my-8">
+                    <h1 className="text-4xl font-bold matcha-gradient-text mb-12">自己紹介</h1>
+                    
+                    <div className="w-full max-w-4xl space-y-8">
+                        <div className="text-backdrop">
+                            <h2 className="text-2xl font-bold readable-text mb-6">経歴</h2>
+                            <CareerTable/>
+                        </div>
 
-                    <h2>主に使用している技術</h2>
-                        C#, Unity, PHP, Python
+                        <div className="text-backdrop">
+                            <h2 className="text-2xl font-bold readable-text mb-6">主に使用している技術</h2>
+                            <p className="readable-text-secondary text-lg">C#, Unity, PHP, Python</p>
+                        </div>
 
-                    <h2>保有資格（合格含む）</h2>
-                    <LicenseTable/>
+                        <div className="text-backdrop">
+                            <h2 className="text-2xl font-bold readable-text mb-6">保有資格（合格含む）</h2>
+                            <LicenseTable/>
+                        </div>
+                    </div>
                 </main>
             </Layout>
         </div>

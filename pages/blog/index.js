@@ -1,5 +1,4 @@
 import Layout from "../../components/Layout";
-import generalStyle from "../../styles/GeneralContent.module.css"
 import { GetMyNotePost } from "../../lib/getMyNotePost"
 import ActionAreaCard from "../../components/ActionAreaCard";
 import {GetMyZennFeed} from "../../lib/getMyZennFeed";
@@ -32,8 +31,9 @@ export async function getStaticProps() {
 export default function Blog( {allPostData} ){
     return (
         <Layout>
-            <main className={generalStyle.main}>
-                <div className={generalStyle.grid}>
+            <main className="min-h-screen py-16 flex flex-col items-center glass-card mx-8 my-8">
+                <h1 className="text-4xl font-bold matcha-gradient-text mb-12">ブログ</h1>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full">
                 {
                     allPostData.map( ({ title, url, publishAt, site }) => {
                         const date = new Date(publishAt);
